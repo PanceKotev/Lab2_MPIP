@@ -2,8 +2,11 @@ package com.laboratoriski.lab2.repository;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import androidx.lifecycle.LiveData;
 import androidx.room.Room;
 import com.laboratoriski.lab2.models.OMovie;
+
+import java.util.List;
 
 public class MoviesRepo {
     private static MoviesDatabase database= null;
@@ -13,12 +16,15 @@ public class MoviesRepo {
         }
 
     }
+    public LiveData<List<OMovie>> getAllMovies(){
+       return database.moviesApiDao().getMoviesAsync();
+    }
     public void insert(final OMovie om){
         new AsyncTask<Void, Void, Void>(){
 
             @Override
             protected Void doInBackground(Void... voids) {
-                database.getMovDao().insert(om);
+                database.moviesApiDao().insert(om);
                 return null;
             }
         }.execute();
@@ -29,7 +35,7 @@ public class MoviesRepo {
 
             @Override
             protected Void doInBackground(Void... voids) {
-                database.getMovDao().deleteAll();
+                database.moviesApiDao().deleteAll();
                 return null;
             }
         }.execute();
