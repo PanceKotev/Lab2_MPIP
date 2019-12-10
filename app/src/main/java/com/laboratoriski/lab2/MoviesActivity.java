@@ -6,10 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import com.laboratoriski.lab2.client.OMDBApiClient;
+import com.laboratoriski.lab2.models.OMovie;
+import com.laboratoriski.lab2.repository.MoviesRepo;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 
-public class MoviesActivity extends AppCompatActivity {
+public class MoviesActivity extends AppCompatActivity{
+    MoviesRepo repository;
     Logger logger= Logger.getLogger("MoviesActivity");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,8 @@ public class MoviesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movies);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
     }
 
     @Override
@@ -32,6 +39,7 @@ public class MoviesActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 logger.info("Query text submitted: " + query);
+
                 return false;
             }
 
