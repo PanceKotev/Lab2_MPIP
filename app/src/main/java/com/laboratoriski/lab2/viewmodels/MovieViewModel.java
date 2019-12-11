@@ -15,6 +15,9 @@ public class MovieViewModel extends AndroidViewModel {
         super(application);
         repository=new MoviesRepo(application);
     }
+    public MoviesRepo getRepository(){
+        return repository;
+    }
     public LiveData<List<OMovie>> getAllMov(){
         return repository.getAllMovies();
     }

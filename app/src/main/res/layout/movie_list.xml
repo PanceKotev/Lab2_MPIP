@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:id="@+id/relativeLayout"
+        >
+
+    <androidx.swiperefreshlayout.widget.CircleImageView
+            android:id="@+id/imageViewPoster"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"/>
+    <TextView
+            android:id="@+id/txtMovieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text"
+            android:layout_toRightOf="@+id/imageViewPoster"
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            />
+
+    <TextView
+            android:id="@+id/txtMovieYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text"
+            android:layout_below="@+id/txtMovieTitle"
+            android:layout_toRightOf="@+id/imageViewPoster"
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            />
+
+</RelativeLayout>

@@ -14,7 +14,6 @@ public class OMovieAsyncTask extends AsyncTask<String,Integer, OMovie> {
     public OMovieAsyncTask(MoviesRepo repository) {
         this.repository = repository;
     }
-
     @Override
     protected OMovie doInBackground(String... strings) {
         final Call<OMovie> movie= OMDBApiClient.getService().getMovie(strings[0]);

@@ -8,7 +8,7 @@ public class OMDBApiClient {
     private static Retrofit retrofit=null;
     private static Retrofit getRetrofit(){
         if(retrofit==null){
-            retrofit=new Retrofit.Builder().baseUrl("http://www.omdbapi.com/?apikey=533faf1a&").addConverterFactory(GsonConverterFactory.create()).build();
+            retrofit=new Retrofit.Builder().baseUrl("http://www.omdbapi.com/").addConverterFactory(GsonConverterFactory.create()).build();
 
         }
         return retrofit;

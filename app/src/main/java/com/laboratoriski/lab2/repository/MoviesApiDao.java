@@ -22,8 +22,6 @@ public interface MoviesApiDao {
 
     @Query("DELETE from Movies")
     public void deleteAll();
-    @Update
-    public void Update();
     @Query("DELETE from Movies WHERE imdbID=:id")
     public void delete(String id);
 

@@ -7,6 +7,6 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface OMDBService {
-    @GET("")
+    @GET("/?apikey=533faf1a&")
     Call<OMovie> getMovie(@Query("t") String movie);
 }

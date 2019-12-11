@@ -10,7 +10,6 @@ public class OMovie {
     @PrimaryKey
     @NonNull
     public String imdbID;
-
     public OMovie(@NonNull String imdbID, String title, String year, String poster, String released, String plot, Double imdbRating, Double metascore) {
         this.imdbID = imdbID;
         Title = title;
